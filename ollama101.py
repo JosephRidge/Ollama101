@@ -1,4 +1,5 @@
 import ollama_101_utils as utils
+from ollama import chat
 
 # prompting section 
 print("To exit please type 'exit'")
@@ -11,8 +12,10 @@ while True:
     else: 
         print("running...")
         user_prompt = f"<YOU>: {user_input}"
-        print(user_prompt)
-        response = utils.getChatReponse(messages=utils.messages, model=utils.MODEL)
-        machine_response = f"<MACHINE Thinker>: {response} \n\n"
-        print(machine_response) 
+        print(user_prompt) 
+        response = utils.streamChatReponse(messages=utils.messages, model=utils.MODEL)
+        print('\n<MACHINE Thinker>: ')
+        for chunk in response:
+            print(chunk.message.content, end='', flush=True)
+
         user_input = utils.getUserQuery(messages=utils.messages) 
