@@ -8,3 +8,8 @@
 - Creating **Simple chat bot**
 
 - Creating *simple chat bot* with a **persona**
+
+
+
+**Resources**
+- [build-conversational-apps using streamlit](https://docs.streamlit.io/develop/tutorials/chat-and-llm-apps/build-conversational-apps)
